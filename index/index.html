@@ -10,29 +10,25 @@
 <body>
     <div class="container">
         <h1>Maintenance Task Tracker</h1>
-        
-        <!-- Dark Mode Toggle Button -->
-        <button id="darkModeToggle" class="dark-mode-toggle">Toggle Dark Mode</button>
-        
         <div class="task-form">
             <input type="text" id="taskInput" placeholder="Task Description">
             <input type="text" id="customerNameInput" placeholder="Customer Name">
             <input type="email" id="customerEmailInput" placeholder="Customer Email">
             <input type="tel" id="customerPhoneInput" placeholder="Customer Phone">
-            <input type="date" id="dueDateInput">
+            <input type="date" id="receiveDateInput" placeholder="Receive Date">
             <select id="priorityInput">
                 <option value="">Select Priority</option>
                 <option value="High">High</option>
                 <option value="Medium">Medium</option>
                 <option value="Low">Low</option>
             </select>
+            <!-- Product Information -->
             <input type="text" id="productColorInput" placeholder="Product Color">
             <input type="text" id="productBrandInput" placeholder="Product Brand">
             <input type="text" id="productTypeInput" placeholder="Product Type">
             <input type="text" id="problemFoundInput" placeholder="Problem Found">
             <button onclick="addTask()">Add Task</button>
         </div>
-        
         <div class="filters">
             <input type="text" id="searchInput" placeholder="Search tasks" onkeyup="filterTasks()">
             <select id="statusFilter" onchange="filterTasks()">
@@ -47,19 +43,27 @@
                 <option value="low">Low</option>
             </select>
         </div>
-        
-        <ul id="taskList" class="task-list"></ul>
+        <ul id="taskList"></ul>
     </div>
-    
-    <footer class="footer">
-        <p>© 2024 Maintenance Solutions Inc. All rights reserved.</p>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Company Name. All rights reserved.</p>
+            <div class="social-media">
+                <a href="https://www.linkedin.com" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.facebook.com" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
         </div>
     </footer>
-    
+    <div class="dark-mode-toggle-container">
+        <button id="darkModeToggle">Toggle Dark Mode</button>
+    </div>
     <script src="/Javascript/script.js"></script>
 </body>
 </html>
