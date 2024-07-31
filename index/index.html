@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Task Tracker</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Maintenance Task Tracker</h1>
+        
+        <!-- Dark Mode Toggle Button -->
+        <button id="darkModeToggle" class="dark-mode-toggle">Toggle Dark Mode</button>
+        
+        <div class="task-form">
+            <input type="text" id="taskInput" placeholder="Task Description">
+            <input type="text" id="customerNameInput" placeholder="Customer Name">
+            <input type="email" id="customerEmailInput" placeholder="Customer Email">
+            <input type="tel" id="customerPhoneInput" placeholder="Customer Phone">
+            <input type="date" id="dueDateInput">
+            <select id="priorityInput">
+                <option value="">Select Priority</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+            <input type="text" id="productColorInput" placeholder="Product Color">
+            <input type="text" id="productBrandInput" placeholder="Product Brand">
+            <input type="text" id="productTypeInput" placeholder="Product Type">
+            <input type="text" id="problemFoundInput" placeholder="Problem Found">
+            <button onclick="addTask()">Add Task</button>
+        </div>
+        
+        <div class="filters">
+            <input type="text" id="searchInput" placeholder="Search tasks" onkeyup="filterTasks()">
+            <select id="statusFilter" onchange="filterTasks()">
+                <option value="">All Statuses</option>
+                <option value="completed">Completed</option>
+                <option value="pending">Pending</option>
+            </select>
+            <select id="priorityFilter" onchange="filterTasks()">
+                <option value="">All Priorities</option>
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+        </div>
+        
+        <ul id="taskList" class="task-list"></ul>
+    </div>
+    
+    <footer class="footer">
+        <p>© 2024 Maintenance Solutions Inc. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+    
+    <script src="/Javascript/script.js"></script>
+</body>
+</html>

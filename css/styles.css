@@ -1,0 +1,276 @@
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #2980b9;
+}
+
+/* Basic Reset */
+body, h1, p, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+    background-image: url('https://www.transparenttextures.com/patterns/white-wall.png');
+    transition: background-color 0.3s;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the container horizontally */
+    justify-content: center; /* Centers the container vertically */
+    box-sizing: border-box;
+    padding: 20px; /* Adds padding to the sides */
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px; /* Increased padding for better spacing */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center aligns the form and filters */
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.9); /* Adds a subtle background to the form area */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a shadow for a polished look */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 28px;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.task-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    max-width: 600px; /* Limits the form width for better readability */
+    margin-bottom: 20px; /* More spacing at the bottom */
+}
+
+.task-form input, .task-form select {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.task-form button {
+    grid-column: 1 / -1;
+    padding: 8px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.task-form button:hover {
+    background-color: #2980b9;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 600px; /* Limits the filter section width for consistency */
+    margin-bottom: 20px;
+}
+
+.filters input, .filters select, .filters button {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.filters input {
+    flex: 2;
+}
+
+.filters select, .filters button {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.filters button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filters button:hover {
+    background-color: #2980b9;
+}
+
+.task-list {
+    list-style-type: none;
+    width: 100%;
+    max-width: 800px; /* Centers task list and limits its width */
+    overflow-y: auto;
+    max-height: calc(100vh - 360px);
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.task-list li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: border-color 0.3s;
+}
+
+.task-list li:hover {
+    border-color: #3498db;
+}
+
+.actions button {
+    background-color: transparent;
+    border: none;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.actions button:hover {
+    color: #3498db;
+}
+
+.task-list li.overdue {
+    background-color: #ffdddd;
+    border-color: #ff5555;
+    position: relative;
+}
+
+.task-list li.overdue::before {
+    content: '⚠️ Overdue Task';
+    color: #ff5555;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+    background-color: rgba(255, 85, 85, 0.2);
+    padding: 2px 5px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.task-list li.overdue:hover::before {
+    box-shadow: 0 0 10px rgba(255, 85, 85, 0.5);
+}
+
+.footer {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px; /* Centers footer content */
+    margin: 20px auto 0;
+    border-radius: 5px;
+}
+
+.footer .social-links a {
+    color: #fff;
+    margin: 0 5px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.footer .social-links a:hover {
+    color: #3498db;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #2c2c2c;
+    color: #f9f9f9;
+}
+
+.dark-mode .container {
+    background-color: #333;
+    color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .task-form input, .dark-mode .task-form select, .dark-mode .filters input, .dark-mode .filters select {
+    background-color: #555;
+    color: #f9f9f9;
+    border-color: #666;
+}
+
+.dark-mode .task-form input:focus, .dark-mode .task-form select:focus, .dark-mode .filters input:focus, .dark-mode .filters select:focus {
+    border-color: #76ff76;
+}
+
+.dark-mode .task-form button, .dark-mode .filters button {
+    background-color: #76ff76;
+    color: #333;
+}
+
+.dark-mode .task-form button:hover, .dark-mode .filters button:hover {
+    background-color: #66cc66;
+}
+
+.dark-mode .task-list li {
+    background-color: #444;
+    border-color: #555;
+}
+
+.dark-mode .task-list li:hover {
+    border-color: #76ff76;
+}
+
+.dark-mode .actions button {
+    color: #aaa;
+}
+
+.dark-mode .actions button:hover {
+    color: #76ff76;
+}
+
+.dark-mode .task-list li.overdue {
+    background-color: #ff4444;
+    border-color: #ff6666;
+}
+
+.dark-mode .task-list li.overdue::before {
+    background-color: #444;
+}
+
+.dark-mode .footer {
+    background-color: #444;
+}
